@@ -1,41 +1,44 @@
-<p class="title">Calendário de Atividades</p>
-<div id="calendar"></div>
-<p class="title">Atividades Próximas</p>
 
-<% @events.each do |event| %>
+  <p class="title">Calendário de Atividades</p>
+  <div id="calendar"></div>
 
-<div class="event">
-  <h3><strong>Evento <%= event.id %> </strong></h3>
-  <div class="row info">
-    <div class="col-xs-3">
-      <p>Nome: <%= event.nome %> </p>
+      <div class="container atividades">
+        <p class="title-2">Atividades Próximas</p>
+          
+        <div>
+          <%= link_to 'Lista Completa', events_path, class: "btn btn-default" %>
+          <%= link_to 'Novo Evento', new_event_path, class: "btn btn-default" %>
+        </div>
+        
+        <% @events.each do |event| %>
+        
+          <div class="event jumbotron">
+            <h3><strong>Evento <%= event.id %> - <%= event.nome %> </strong><span class="label label-primary"> <%= event.pilar %> </span></h3>
+            <hr>
+            <div class="row info">
+              <div class="col-xs-3">
+                <p><span class="label label-default">Ciclo</span> <%= event.ciclo %> </p>
+                <p><span class="label label-warning">Local</span> <%= event.local %> </p>
+              </div>
+              <div class="col-xs-3">
+                <p><strong>Início </strong><%= event.hora_inicio.to_formatted_s(:short) %> </p>
+                <p><strong>Final </strong><%= event.hora_fim.to_formatted_s(:short) %> </p>
+                     
+              </div>
+              <div class="col-xs-6">
+                <p><strong>Descrição </strong><%= event.descricao %> </p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12">
+                <p><%= link_to 'Editar', edit_event_path(event), class: "btn btn-default" %> <%= link_to 'Deletar', event_path(event), method: :delete, data: {confirm: 'Deseja Excluir?'}, class: "btn btn-default" %></p>
+              </div>
+            </div>  
+          </div>
+        
+        <% end %>
+        
+        <%= link_to 'Lista Completa', events_path, class: "btn btn-default" %>
+        <%= link_to 'Novo Evento', new_event_path, class: "btn btn-default" %>
+  
     </div>
-    <div class="col-xs-2">
-      <p>Pilar: <%= event.pilar %> </p>
-    </div>
-    <div class="col-xs-2">
-      <p>Ciclo: <%= event.ciclo %> </p>
-    </div>
-    <div class="col-xs-2">
-      <p>Hora: <%= event.hora_inicio %> <%= event.hora_fim %> </p>
-    </div>
-    <div class="col-xs-3">
-      <p>Local: <%= event.local %> </p>
-    </div>
-  </div>
-  <div class="row description">
-    <div class="col-xs-12">
-      <p>Descrição: <%= event.descricao %> </p>
-    </div>
-  </div>
-  <div class="row attendee">
-    <div class="col-xs-12">
-      <p>Quem vai: Pessoas</p>
-    </div>
-  </div>  
-</div>
-
-<% end %>
-
-<%= link_to 'Lista Completa', events_path, class: "btn btn-default" %>
-<%= link_to 'Novo Evento', new_event_path, class: "btn btn-default" %>

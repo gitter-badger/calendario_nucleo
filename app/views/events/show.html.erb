@@ -1,33 +1,26 @@
-<p class="title">Resumo da Atividade</p>
-<div class="event">
-  <h3><strong>Evento</strong></h3>
+<div class="container">
+
+<h3>Resumo do Evento</h3>
+<div class="event jumbotron">
+  <h3><strong>Evento <%= @event.id %> - <%= @event.nome %> </strong><span class="label label-primary"> <%= @event.pilar %> </span></h3>
+  <hr>
   <div class="row info">
     <div class="col-xs-3">
-      <p>Nome: <%= @event.nome %> </p>
-    </div>
-    <div class="col-xs-2">
-      <p>Pilar: <%= @event.pilar %> </p>
-    </div>
-    <div class="col-xs-2">
-      <p>Ciclo: <%= @event.ciclo %> </p>
-    </div>
-    <div class="col-xs-2">
-      <p>Hora: <%= @event.hora_inicio %> <%= @event.hora_fim %> </p>
+      <p><span class="label label-default">Ciclo</span> <%= @event.ciclo %> </p>
+      <p><span class="label label-warning">Local</span> <%= @event.local %> </p>
     </div>
     <div class="col-xs-3">
-      <p>Local:  <%= @event.local %> </p>
+      <p><strong>Início </strong><%= @event.hora_inicio.to_formatted_s(:short) %> </p>
+      <p><strong>Final </strong><%= @event.hora_fim.to_formatted_s(:short) %> </p>
+           
+    </div>
+    <div class="col-xs-6">
+      <p><strong>Descrição </strong><%= @event.descricao %> </p>
     </div>
   </div>
-  <div class="row description">
+  <div class="row">
     <div class="col-xs-12">
-      <p>Descrição: <%= @event.descricao %> </p>
-    </div>
-  </div>
-  <div class="row attendee">
-    <div class="col-xs-12">
-      <p>Quem vai: Pessoas</p>
+      <p><%= link_to 'Editar', edit_event_path(@event), class: "btn btn-default" %> <%= link_to 'Voltar', root_url, class: "btn btn-default" %> </p>
     </div>
   </div>  
 </div>
-
-<%= link_to 'Voltar', root_url, class: "btn btn-default" %>
