@@ -55,12 +55,19 @@
 
 /* Media Queries */
 
-@media (min-width: 611px) {
+@media (min-width: 300px) and (max-width: 610px) {
+  .title {
+    font-size: 1.2em;
+  }
+}
+
+
+@media (min-width: 611px) and (max-width: 999px) {
     .logo {
         padding: 0% 2%
     }
     .title {
-      font-size: 1em;
+      font-size: 2em;
     }
     .atividades, #calendar {
       width: 80%;
