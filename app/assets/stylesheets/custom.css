@@ -1,0 +1,48 @@
+#calendar {
+  margin: 0 auto;
+  width: 80%;
+}
+
+/* Navigation Styles */
+
+.header {
+  background: rgba(125,158,192,.15); /* rgba(125,158,192,.15); rgba(255,236,139,.2);*/
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.logo {
+  max-width: 521px;
+  padding: 0% 10%;
+  margin: 30px auto;
+}
+
+.title {
+  text-align: center;
+  font-size: 2.5em;
+  margin-top: 35px;
+  margin-bottom: 50px;
+  font-family: 'Archivo Black';
+  text-transform: uppercase;
+  color: #7a7a7a;
+}
+
+/* Activities Styles */
+
+.event {
+  padding: 20px 5%;
+}
+
+/* Footer Styles */
+
+.footer {
+  padding-left: 2%;
+  padding-bottom: 2%;
+}
+
+/* Media Queries */
+
+@media (min-width: 620px) {
+    .logo {
+        padding: 0% 2%
+    }
+}

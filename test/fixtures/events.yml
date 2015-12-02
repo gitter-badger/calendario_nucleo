@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nome: MyString
+  pilar: MyString
+  ciclo: MyString
+  descricao: MyText
+  hora_inicio: 2015-12-01 23:20:59
+  hora_fim: 2015-12-01 23:20:59
+  local: MyString
+
+two:
+  nome: MyString
+  pilar: MyString
+  ciclo: MyString
+  descricao: MyText
+  hora_inicio: 2015-12-01 23:20:59
+  hora_fim: 2015-12-01 23:20:59
+  local: MyString

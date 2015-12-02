@@ -45,3 +45,7 @@ group :development do
   gem 'spring'
 end
 
+gem 'momentjs-rails'
+gem 'fullcalendar-rails'
+gem 'twitter-bootstrap-rails'
+gem 'jquery-ui-rails'
